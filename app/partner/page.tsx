@@ -3,76 +3,111 @@
 import { useState } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { CheckCircle2, Zap, Users, TrendingUp } from 'lucide-react'
+import { CheckCircle2, MessageCircle, Phone, Mail, MapPin, Package, Store } from 'lucide-react'
+
+type StakeholderType = 'supplier' | 'merchant'
 
 export default function Partner() {
-  const [formData, setFormData] = useState({
-    fullName: '',
-    businessName: '',
+  const [activeTab, setActiveTab] = useState<StakeholderType>('supplier')
+  const [supplierForm, setSupplierForm] = useState({
+    companyName: '',
+    countryOfOrigin: '',
+    productCategory: '',
+    distributionReach: '',
+    monthlyVolume: '',
+    contactName: '',
     email: '',
     phone: '',
-    partnershipType: '',
-    message: '',
+  })
+  const [merchantForm, setMerchantForm] = useState({
+    businessName: '',
+    location: '',
+    businessType: '',
+    monthlyVolume: '',
+    contactName: '',
+    email: '',
+    phone: '',
   })
   const [submitted, setSubmitted] = useState(false)
 
-  const partnershipTypes = [
-    'Product Distribution',
-    'Logistics Partnership',
-    'Wholesale Supply',
-    'Business Partnership',
-    'Technology Integration',
+  const productCategories = [
+    'FMCG & Groceries',
+    'Household Products',
+    'Personal Care',
+    'Food & Beverages',
+    'Pharmaceuticals',
+    'Agricultural Products',
+    'Electronics',
     'Other',
   ]
 
-  const benefits = [
-    {
-      icon: CheckCircle2,
-      title: 'Reliable Operations',
-      description: 'Access to our established distribution network',
-    },
-    {
-      icon: TrendingUp,
-      title: 'Growth Opportunity',
-      description: 'Scale your business with our support',
-    },
-    {
-      icon: Users,
-      title: 'Strategic Partnership',
-      description: 'Collaborative approach to mutual success',
-    },
-    {
-      icon: Zap,
-      title: 'Modern Solutions',
-      description: 'Technology-driven logistics and systems',
-    },
+  const businessTypes = [
+    'Wholesaler',
+    'Supermarket',
+    'Pharmacy',
+    'Corner Retail',
+    'Restaurant',
+    'Institution',
   ]
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+  const handleSupplierChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const { name, value } = e.target
-    setFormData((prev) => ({
+    setSupplierForm((prev) => ({
       ...prev,
       [name]: value,
     }))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleMerchantChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target
+    setMerchantForm((prev) => ({
+      ...prev,
+      [name]: value,
+    }))
+  }
+
+  const handleSupplierSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    if (!formData.fullName || !formData.email || !formData.businessName) {
+    if (!supplierForm.companyName || !supplierForm.email || !supplierForm.productCategory) {
       alert('Please fill in all required fields')
       return
     }
     setSubmitted(true)
     setTimeout(() => {
-      setFormData({
-        fullName: '',
-        businessName: '',
+      setSupplierForm({
+        companyName: '',
+        countryOfOrigin: '',
+        productCategory: '',
+        distributionReach: '',
+        monthlyVolume: '',
+        contactName: '',
         email: '',
         phone: '',
-        partnershipType: '',
-        message: '',
+      })
+      setSubmitted(false)
+    }, 3000)
+  }
+
+  const handleMerchantSubmit = (e: React.FormEvent) => {
+    e.preventDefault()
+    if (!merchantForm.businessName || !merchantForm.email || !merchantForm.businessType) {
+      alert('Please fill in all required fields')
+      return
+    }
+    setSubmitted(true)
+    setTimeout(() => {
+      setMerchantForm({
+        businessName: '',
+        location: '',
+        businessType: '',
+        monthlyVolume: '',
+        contactName: '',
+        email: '',
+        phone: '',
       })
       setSubmitted(false)
     }, 3000)
@@ -83,250 +118,388 @@ export default function Partner() {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="section-padding bg-brand-navy text-white">
-          <div className="container">
+        <section className="py-16 md:py-20 bg-brand-primary text-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Let&apos;s Build Together
+              <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
+                B2B Partner Portal
               </h1>
-              <p className="text-xl text-gray-300">
-                Partner with Majaami Distribution to expand your reach, connect with businesses, and support a stronger distribution network across The Gambia.
+              <p className="text-lg md:text-xl text-gray-100">
+                Join Majaami&apos;s integrated ecosystem. Whether you supply products or operate retail, we streamline your onboarding and business relationship.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Partnership Benefits */}
-        <section className="section-padding bg-white">
-          <div className="container">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-brand-navy mb-6">
-                Partnership Benefits
-              </h2>
-              <p className="text-lg text-gray-600">
-                When you partner with us, you gain access to:
-              </p>
+        {/* Segmented Intake Portal */}
+        <section className="py-20 md:py-28 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Tab Switcher */}
+            <div className="flex gap-4 mb-12 border-b border-gray-200">
+              <button
+                onClick={() => setActiveTab('supplier')}
+                className={`pb-4 px-2 font-bold text-lg transition-all ${
+                  activeTab === 'supplier'
+                    ? 'text-brand-accent border-b-2 border-brand-accent'
+                    : 'text-gray-600 hover:text-brand-primary'
+                }`}
+              >
+                <Package className="w-5 h-5 inline mr-2" />
+                Brand & Supplier Onboarding
+              </button>
+              <button
+                onClick={() => setActiveTab('merchant')}
+                className={`pb-4 px-2 font-bold text-lg transition-all ${
+                  activeTab === 'merchant'
+                    ? 'text-brand-accent border-b-2 border-brand-accent'
+                    : 'text-gray-600 hover:text-brand-primary'
+                }`}
+              >
+                <Store className="w-5 h-5 inline mr-2" />
+                Merchant & Retailer Application
+              </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {benefits.map((benefit, index) => {
-                const Icon = benefit.icon
-                return (
-                  <div key={index} className="card">
-                    <Icon className="w-10 h-10 text-brand-orange mb-4" />
-                    <h3 className="text-lg font-semibold text-brand-navy mb-2">
-                      {benefit.title}
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      {benefit.description}
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+              {/* Form Section */}
+              <div className="lg:col-span-2">
+                {submitted ? (
+                  <div className="bg-green-50 border border-green-300 rounded-2xl p-12 text-center">
+                    <CheckCircle2 className="w-16 h-16 text-green-600 mx-auto mb-4" />
+                    <h3 className="text-2xl font-bold text-green-900 mb-2">Application Received!</h3>
+                    <p className="text-green-700 mb-4">
+                      Thank you for your interest. Our B2B team will contact you within 1-2 business days.
                     </p>
+                    <button
+                      onClick={() => setSubmitted(false)}
+                      className="text-green-600 hover:text-green-800 font-semibold underline"
+                    >
+                      Submit Another Application
+                    </button>
                   </div>
-                )
-              })}
-            </div>
-          </div>
-        </section>
+                ) : activeTab === 'supplier' ? (
+                  /* Supplier Form */
+                  <form onSubmit={handleSupplierSubmit} className="space-y-6">
+                    <h2 className="text-3xl font-bold text-brand-primary mb-8">
+                      Distribute Your Brand with Majaami
+                    </h2>
 
-        {/* Partnership Form */}
-        <section className="section-padding bg-brand-light">
-          <div className="container">
-            <div className="max-w-2xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-4xl font-bold text-brand-navy mb-4">
-                  Partnership Inquiry
-                </h2>
-                <p className="text-lg text-gray-600">
-                  Tell us about your business and partnership interests
-                </p>
-              </div>
-
-              {submitted ? (
-                <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center">
-                  <CheckCircle2 className="w-16 h-16 text-green-600 mx-auto mb-4" />
-                  <h3 className="text-2xl font-bold text-green-900 mb-2">
-                    Thank You!
-                  </h3>
-                  <p className="text-green-700">
-                    We&apos;ve received your inquiry and will be in touch shortly.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="bg-white rounded-xl p-8 border border-brand-gray-100">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-                    {/* Full Name */}
-                    <div>
-                      <label className="block text-sm font-semibold text-brand-navy mb-2">
-                        Full Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="fullName"
-                        value={formData.fullName}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 border border-brand-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange"
-                        placeholder="Your name"
-                        required
-                      />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-bold text-brand-primary mb-2">
+                          Company/Brand Name *
+                        </label>
+                        <input
+                          type="text"
+                          name="companyName"
+                          value={supplierForm.companyName}
+                          onChange={handleSupplierChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                          placeholder="Your company name"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-bold text-brand-primary mb-2">
+                          Country of Origin
+                        </label>
+                        <input
+                          type="text"
+                          name="countryOfOrigin"
+                          value={supplierForm.countryOfOrigin}
+                          onChange={handleSupplierChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                          placeholder="e.g., Senegal, Morocco"
+                        />
+                      </div>
                     </div>
 
-                    {/* Business Name */}
-                    <div>
-                      <label className="block text-sm font-semibold text-brand-navy mb-2">
-                        Business Name *
-                      </label>
-                      <input
-                        type="text"
-                        name="businessName"
-                        value={formData.businessName}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 border border-brand-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange"
-                        placeholder="Your business name"
-                        required
-                      />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-bold text-brand-primary mb-2">
+                          Product Category *
+                        </label>
+                        <select
+                          name="productCategory"
+                          value={supplierForm.productCategory}
+                          onChange={handleSupplierChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                          required
+                        >
+                          <option value="">Select category</option>
+                          {productCategories.map((cat) => (
+                            <option key={cat} value={cat}>
+                              {cat}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-bold text-brand-primary mb-2">
+                          Current Distribution Reach
+                        </label>
+                        <input
+                          type="text"
+                          name="distributionReach"
+                          value={supplierForm.distributionReach}
+                          onChange={handleSupplierChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                          placeholder="e.g., West Africa, Senegal & Mali"
+                        />
+                      </div>
                     </div>
 
-                    {/* Email */}
-                    <div>
-                      <label className="block text-sm font-semibold text-brand-navy mb-2">
-                        Email Address *
-                      </label>
-                      <input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 border border-brand-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange"
-                        placeholder="your@email.com"
-                        required
-                      />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-bold text-brand-primary mb-2">
+                          Estimated Monthly Volume (units)
+                        </label>
+                        <input
+                          type="text"
+                          name="monthlyVolume"
+                          value={supplierForm.monthlyVolume}
+                          onChange={handleSupplierChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                          placeholder="e.g., 5,000 - 10,000"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-bold text-brand-primary mb-2">
+                          Contact Name
+                        </label>
+                        <input
+                          type="text"
+                          name="contactName"
+                          value={supplierForm.contactName}
+                          onChange={handleSupplierChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                          placeholder="Your name"
+                        />
+                      </div>
                     </div>
 
-                    {/* Phone */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-bold text-brand-primary mb-2">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={supplierForm.email}
+                          onChange={handleSupplierChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                          placeholder="your@company.com"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-bold text-brand-primary mb-2">
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={supplierForm.phone}
+                          onChange={handleSupplierChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                          placeholder="+220 XXXX XXXX"
+                        />
+                      </div>
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full px-6 py-4 bg-brand-accent text-white font-bold rounded-lg hover:bg-brand-accent-dark transition-all"
+                    >
+                      Submit Supplier Application
+                    </button>
+                  </form>
+                ) : (
+                  /* Merchant Form */
+                  <form onSubmit={handleMerchantSubmit} className="space-y-6">
+                    <h2 className="text-3xl font-bold text-brand-primary mb-8">
+                      Open Your Wholesale Account
+                    </h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-bold text-brand-primary mb-2">
+                          Business Name *
+                        </label>
+                        <input
+                          type="text"
+                          name="businessName"
+                          value={merchantForm.businessName}
+                          onChange={handleMerchantChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                          placeholder="Your business name"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-bold text-brand-primary mb-2">
+                          Shop/Depot Location in The Gambia *
+                        </label>
+                        <input
+                          type="text"
+                          name="location"
+                          value={merchantForm.location}
+                          onChange={handleMerchantChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                          placeholder="e.g., Serekunda, Banjul"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-bold text-brand-primary mb-2">
+                          Business Type *
+                        </label>
+                        <select
+                          name="businessType"
+                          value={merchantForm.businessType}
+                          onChange={handleMerchantChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                          required
+                        >
+                          <option value="">Select business type</option>
+                          {businessTypes.map((type) => (
+                            <option key={type} value={type}>
+                              {type}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-bold text-brand-primary mb-2">
+                          Monthly Purchase Volume (GMD or units)
+                        </label>
+                        <input
+                          type="text"
+                          name="monthlyVolume"
+                          value={merchantForm.monthlyVolume}
+                          onChange={handleMerchantChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                          placeholder="e.g., 100,000 GMD or 2,000 units"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-sm font-bold text-brand-primary mb-2">
+                          Contact Name
+                        </label>
+                        <input
+                          type="text"
+                          name="contactName"
+                          value={merchantForm.contactName}
+                          onChange={handleMerchantChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                          placeholder="Your name"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-bold text-brand-primary mb-2">
+                          Email Address *
+                        </label>
+                        <input
+                          type="email"
+                          name="email"
+                          value={merchantForm.email}
+                          onChange={handleMerchantChange}
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                          placeholder="your@business.com"
+                          required
+                        />
+                      </div>
+                    </div>
+
                     <div>
-                      <label className="block text-sm font-semibold text-brand-navy mb-2">
+                      <label className="block text-sm font-bold text-brand-primary mb-2">
                         Phone Number
                       </label>
                       <input
                         type="tel"
                         name="phone"
-                        value={formData.phone}
-                        onChange={handleChange}
-                        className="w-full px-4 py-2 border border-brand-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange"
-                        placeholder="+220 XXX XXXX"
+                        value={merchantForm.phone}
+                        onChange={handleMerchantChange}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-accent"
+                        placeholder="+220 XXXX XXXX"
                       />
                     </div>
-                  </div>
 
-                  {/* Partnership Type */}
-                  <div className="mb-6">
-                    <label className="block text-sm font-semibold text-brand-navy mb-2">
-                      Partnership Type
-                    </label>
-                    <select
-                      name="partnershipType"
-                      value={formData.partnershipType}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-brand-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange"
+                    <button
+                      type="submit"
+                      className="w-full px-6 py-4 bg-brand-accent text-white font-bold rounded-lg hover:bg-brand-accent-dark transition-all"
                     >
-                      <option value="">Select a partnership type</option>
-                      {partnershipTypes.map((type) => (
-                        <option key={type} value={type}>
-                          {type}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                      Submit Retailer Application
+                    </button>
+                  </form>
+                )}
+              </div>
 
-                  {/* Message */}
-                  <div className="mb-6">
-                    <label className="block text-sm font-semibold text-brand-navy mb-2">
-                      Message
-                    </label>
-                    <textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      rows={6}
-                      className="w-full px-4 py-2 border border-brand-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-brand-orange resize-none"
-                      placeholder="Tell us about your business and partnership interests..."
-                    ></textarea>
-                  </div>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    className="w-full btn-primary"
-                  >
-                    Submit Partnership Inquiry
-                  </button>
-
-                  <p className="text-xs text-gray-500 text-center mt-4">
-                    We&apos;ll review your inquiry and get back to you within 2-3 business days.
+              {/* Contact Card */}
+              <div className="lg:col-span-1">
+                <div className="bg-brand-primary text-white rounded-2xl p-8 sticky top-20">
+                  <h3 className="text-2xl font-black mb-2">Prefer Direct Contact?</h3>
+                  <p className="text-gray-100 mb-8 text-sm">
+                    Reach our B2B sales desk for immediate conversations about your partnership.
                   </p>
-                </form>
-              )}
-            </div>
-          </div>
-        </section>
 
-        {/* Next Steps */}
-        <section className="section-padding bg-white">
-          <div className="container">
-            <div className="max-w-3xl mx-auto">
-              <h2 className="text-4xl font-bold text-brand-navy mb-12 text-center">
-                What Happens Next
-              </h2>
-              <div className="space-y-8">
-                <div className="flex gap-6">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange text-white font-bold flex-shrink-0">
-                    1
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-brand-navy mb-2">
-                      Submission Review
-                    </h3>
-                    <p className="text-gray-600">
-                      We review your partnership inquiry and assess the potential for collaboration.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-6">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange text-white font-bold flex-shrink-0">
-                    2
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-brand-navy mb-2">
-                      Initial Contact
-                    </h3>
-                    <p className="text-gray-600">
-                      Our team reaches out to discuss your business needs and partnership goals.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-6">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange text-white font-bold flex-shrink-0">
-                    3
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-brand-navy mb-2">
-                      Proposal Development
-                    </h3>
-                    <p className="text-gray-600">
-                      We create a customized partnership proposal tailored to your needs.
-                    </p>
-                  </div>
-                </div>
-                <div className="flex gap-6">
-                  <div className="flex items-center justify-center w-12 h-12 rounded-full bg-brand-orange text-white font-bold flex-shrink-0">
-                    4
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-brand-navy mb-2">
-                      Agreement & Launch
-                    </h3>
-                    <p className="text-gray-600">
-                      Once agreed, we implement the partnership and begin collaboration.
-                    </p>
+                  <div className="space-y-6">
+                    {/* WhatsApp */}
+                    <a
+                      href="https://wa.me/22020000000"
+                      className="flex items-center gap-4 p-4 bg-white/10 backdrop-blur hover:bg-white/20 rounded-xl transition-all group"
+                    >
+                      <div className="w-12 h-12 bg-brand-accent rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-all">
+                        <MessageCircle className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-200">WhatsApp B2B Desk</p>
+                        <p className="font-bold text-lg">+220 2000 0000</p>
+                      </div>
+                    </a>
+
+                    {/* Phone */}
+                    <a
+                      href="tel:+22020000000"
+                      className="flex items-center gap-4 p-4 bg-white/10 backdrop-blur hover:bg-white/20 rounded-xl transition-all group"
+                    >
+                      <div className="w-12 h-12 bg-brand-accent rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-all">
+                        <Phone className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-200">Direct Line</p>
+                        <p className="font-bold text-lg">+220 2000 0000</p>
+                      </div>
+                    </a>
+
+                    {/* Email */}
+                    <a
+                      href="mailto:b2b@majaami.com"
+                      className="flex items-center gap-4 p-4 bg-white/10 backdrop-blur hover:bg-white/20 rounded-xl transition-all group"
+                    >
+                      <div className="w-12 h-12 bg-brand-accent rounded-lg flex items-center justify-center flex-shrink-0 group-hover:bg-white/30 transition-all">
+                        <Mail className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-gray-200">Email</p>
+                        <p className="font-bold text-lg">b2b@majaami.com</p>
+                      </div>
+                    </a>
+
+                    {/* Business Hours */}
+                    <div className="p-4 bg-white/10 backdrop-blur rounded-xl border border-white/20">
+                      <p className="text-sm text-gray-200 mb-2">Business Hours</p>
+                      <p className="font-bold">Monday - Friday</p>
+                      <p className="text-sm text-gray-100">8:00 AM - 6:00 PM GMT</p>
+                      <p className="text-sm text-gray-100 mt-2">Saturday: 9:00 AM - 1:00 PM GMT</p>
+                    </div>
                   </div>
                 </div>
               </div>
