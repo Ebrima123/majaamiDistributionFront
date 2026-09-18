@@ -5,6 +5,7 @@ import BusinessSolutions from '@/components/sections/BusinessSolutions'
 import StrategicPillars from '@/components/sections/StrategicPillars'
 import QuickServices from '@/components/sections/QuickServices'
 import ValueProposition from '@/components/sections/ValueProposition'
+import LongTermVision from '@/components/sections/LongTermVision'
 import AboutPreview from '@/components/sections/AboutPreview'
 import ServicesShowcase from '@/components/sections/ServicesShowcase'
 import PartnershipCTA from '@/components/sections/PartnershipCTA'
@@ -20,6 +21,7 @@ export default function Home() {
         <StrategicPillars />
         <QuickServices />
         <ValueProposition />
+        <LongTermVision />
         <AboutPreview />
         <ServicesShowcase />
         <PartnershipCTA />

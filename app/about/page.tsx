@@ -1,5 +1,6 @@
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import LongTermVision from '@/components/sections/LongTermVision'
 import { CheckCircle2, Target, Eye } from 'lucide-react'
 
 export default function About() {
@@ -135,53 +136,7 @@ export default function About() {
         </section>
 
         {/* Long-term Vision */}
-        <section className="section-padding bg-brand-light">
-          <div className="container">
-            <div className="max-w-3xl">
-              <h2 className="text-4xl font-bold text-brand-navy mb-6">Our Long-Term Ambition</h2>
-              <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                We&apos;re building an interconnected ecosystem:
-              </p>
-              <div className="space-y-4">
-                <div className="flex gap-4">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-brand-orange text-white font-bold flex-shrink-0">1</div>
-                  <div>
-                    <h4 className="font-semibold text-brand-navy mb-1">Distribution</h4>
-                    <p className="text-gray-700">Create efficient product distribution networks</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-brand-orange text-white font-bold flex-shrink-0">2</div>
-                  <div>
-                    <h4 className="font-semibold text-brand-navy mb-1">Agriculture</h4>
-                    <p className="text-gray-700">Support and enhance agricultural productivity</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-brand-orange text-white font-bold flex-shrink-0">3</div>
-                  <div>
-                    <h4 className="font-semibold text-brand-navy mb-1">Logistics</h4>
-                    <p className="text-gray-700">Build world-class logistics infrastructure</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-brand-orange text-white font-bold flex-shrink-0">4</div>
-                  <div>
-                    <h4 className="font-semibold text-brand-navy mb-1">Technology</h4>
-                    <p className="text-gray-700">Leverage innovation for operational excellence</p>
-                  </div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex items-center justify-center w-8 h-8 rounded-full bg-brand-orange text-white font-bold flex-shrink-0">5</div>
-                  <div>
-                    <h4 className="font-semibold text-brand-navy mb-1">Reinvestment</h4>
-                    <p className="text-gray-700">Create sustainable growth and economic value</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <LongTermVision />
       </main>
       <Footer />
     </>
