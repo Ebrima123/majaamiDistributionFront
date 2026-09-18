@@ -1,4 +1,4 @@
-import Navbar from '@/components/Navbar'
+import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { CheckCircle2, Target, Eye } from 'lucide-react'
 
@@ -38,7 +38,7 @@ export default function About() {
 
   return (
     <>
-      <Navbar />
+      <Header />
       <main>
         {/* Hero Section */}
         <section className="section-padding bg-brand-navy text-white">

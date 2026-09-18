@@ -2,13 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Root color variables */
+/* Root color variables - Enterprise Logistics Palette */
 :root {
-  --color-navy: #0B1F3A;
-  --color-orange: #FF6B00;
-  --color-white: #FFFFFF;
-  --color-light: #F4F6F8;
-  --color-dark: #101828;
+  --color-primary: #FFCC00;
+  --color-primary-dark: #FFB800;
+  --color-dark-charcoal: #111827;
+  --color-slate: #1f2937;
+  --color-white: #ffffff;
+  --color-light-gray: #f3f4f6;
+  --color-accent-red: #dc2626;
+  --color-border: #e5e7eb;
+  --color-text-primary: #111827;
+  --color-text-secondary: #4b5563;
 }
 
 * {
@@ -22,9 +27,10 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  color: var(--color-dark);
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+  color: var(--color-text-primary);
   background-color: var(--color-white);
+  letter-spacing: -0.3px;
 }
 
 /* Typography */
@@ -60,17 +66,17 @@ p {
   color: #4B5563;
 }
 
-/* Button styles */
+/* Button styles - Enterprise */
 .btn-primary {
-  @apply px-6 py-3 bg-brand-orange text-white font-semibold rounded-lg transition-all duration-300 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-brand-orange focus:ring-offset-2;
+  @apply px-6 py-3 bg-brand-primary text-brand-dark font-bold rounded-md transition-all duration-300 hover:bg-brand-primary-dark focus:outline-none focus:ring-2 focus:ring-brand-primary focus:ring-offset-2 shadow-md hover:shadow-lg;
 }
 
 .btn-secondary {
-  @apply px-6 py-3 bg-brand-navy text-white font-semibold rounded-lg transition-all duration-300 hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-brand-navy focus:ring-offset-2;
+  @apply px-6 py-3 bg-brand-dark text-white font-bold rounded-md transition-all duration-300 hover:bg-brand-slate focus:outline-none focus:ring-2 focus:ring-brand-dark focus:ring-offset-2;
 }
 
 .btn-outline {
-  @apply px-6 py-3 border-2 border-brand-navy text-brand-navy font-semibold rounded-lg transition-all duration-300 hover:bg-brand-navy hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-navy focus:ring-offset-2;
+  @apply px-6 py-3 border-2 border-brand-dark text-brand-dark font-bold rounded-md transition-all duration-300 hover:bg-brand-dark hover:text-white focus:outline-none focus:ring-2 focus:ring-brand-dark focus:ring-offset-2;
 }
 
 /* Card styles */
@@ -79,7 +85,7 @@ p {
 }
 
 .card-hover {
-  @apply cursor-pointer hover:border-brand-orange hover:shadow-xl;
+  @apply cursor-pointer hover:border-brand-primary hover:shadow-xl;
 }
 
 /* Section spacing */
@@ -114,7 +120,7 @@ p {
 
 /* Focus states for accessibility */
 :focus-visible {
-  outline: 2px solid var(--color-orange);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
@@ -124,33 +130,33 @@ p {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-light);
+  background: var(--color-light-gray);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--color-navy);
+  background: var(--color-dark-charcoal);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-orange);
+  background: var(--color-primary);
 }
 
 /* Selection */
 ::selection {
-  background-color: var(--color-orange);
-  color: white;
+  background-color: var(--color-primary);
+  color: var(--color-dark-charcoal);
 }
 
 /* Link styling */
 a {
-  color: var(--color-orange);
+  color: var(--color-primary);
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #E55A00;
+  color: var(--color-primary-dark);
 }
 
 /* Input and form styles */
@@ -161,19 +167,19 @@ input, textarea, select {
 input:focus, textarea:focus, select:focus {
   outline: none;
   ring: 2px;
-  ring-color: var(--color-orange);
+  ring-color: var(--color-primary);
 }
 
 /* Utility classes */
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-navy) 0%, var(--color-orange) 100%);
+  background: linear-gradient(135deg, var(--color-dark-charcoal) 0%, var(--color-primary) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .gradient-overlay {
-  background: linear-gradient(135deg, rgba(11, 31, 58, 0.8) 0%, rgba(255, 107, 0, 0.6) 100%);
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.8) 0%, rgba(255, 204, 0, 0.6) 100%);
 }
 
 .section-divider {

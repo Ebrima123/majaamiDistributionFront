@@ -9,11 +9,14 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          navy: '#0B1F3A',
-          orange: '#FF6B00',
-          white: '#FFFFFF',
-          light: '#F4F6F8',
-          dark: '#101828',
+          primary: '#FFCC00',
+          'primary-dark': '#FFB800',
+          dark: '#111827',
+          slate: '#1f2937',
+          white: '#ffffff',
+          'light-gray': '#f3f4f6',
+          'accent-red': '#dc2626',
+          border: '#e5e7eb',
           gray: {
             50: '#F9FAFB',
             100: '#F3F4F6',

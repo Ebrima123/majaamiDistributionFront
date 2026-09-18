@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import Navbar from '@/components/Navbar'
+import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { CheckCircle2, Zap, Users, TrendingUp } from 'lucide-react'
 
@@ -80,7 +80,7 @@ export default function Partner() {
 
   return (
     <>
-      <Navbar />
+      <Header />
       <main>
         {/* Hero Section */}
         <section className="section-padding bg-brand-navy text-white">

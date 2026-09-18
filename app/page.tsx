@@ -1,4 +1,4 @@
-import Navbar from '@/components/Navbar'
+import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Hero from '@/components/sections/Hero'
 import BusinessSolutions from '@/components/sections/BusinessSolutions'
@@ -13,7 +13,7 @@ import FinalCTA from '@/components/sections/FinalCTA'
 export default function Home() {
   return (
     <>
-      <Navbar />
+      <Header />
       <main>
         <Hero />
         <BusinessSolutions />
