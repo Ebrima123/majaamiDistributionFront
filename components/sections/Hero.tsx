@@ -7,12 +7,12 @@ export default function Hero() {
       <div className="container section-padding">
         <div className="max-w-4xl">
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            Connecting Products.{' '}
-            <span className="text-brand-orange">Driving Business Growth.</span>
+            Your Products.{' '}
+            <span className="text-brand-orange">Our Distribution Network.</span>
           </h1>
 
           <p className="text-lg md:text-xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
-            Majaami Distribution delivers modern distribution and logistics solutions that connect businesses, products, and communities across The Gambia and beyond.
+            Majaami Distribution connects your products to brands, retailers, and business partners across The Gambia with modern logistics solutions.
           </p>
 
           {/* CTA Buttons */}

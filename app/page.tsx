@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Hero from '@/components/sections/Hero'
+import BusinessSolutions from '@/components/sections/BusinessSolutions'
 import QuickServices from '@/components/sections/QuickServices'
 import ValueProposition from '@/components/sections/ValueProposition'
 import AboutPreview from '@/components/sections/AboutPreview'
@@ -15,11 +16,12 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <BusinessSolutions />
         <QuickServices />
         <ValueProposition />
+        <ProcessTimeline />
         <AboutPreview />
         <ServicesShowcase />
-        <ProcessTimeline />
         <PartnershipCTA />
         <FinalCTA />
       </main>
