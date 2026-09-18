@@ -2,6 +2,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import Hero from '@/components/sections/Hero'
 import BusinessSolutions from '@/components/sections/BusinessSolutions'
+import StrategicPillars from '@/components/sections/StrategicPillars'
 import QuickServices from '@/components/sections/QuickServices'
 import ValueProposition from '@/components/sections/ValueProposition'
 import AboutPreview from '@/components/sections/AboutPreview'
@@ -16,6 +17,7 @@ export default function Home() {
       <main>
         <Hero />
         <BusinessSolutions />
+        <StrategicPillars />
         <QuickServices />
         <ValueProposition />
         <AboutPreview />
