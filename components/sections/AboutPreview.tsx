@@ -12,11 +12,11 @@ export default function AboutPreview() {
               About Majaami
             </p>
             <h2 className="text-4xl md:text-5xl font-bold text-brand-navy mb-6">
-              Building Africa's Modern Distribution Network
+              Building Africa&apos;s Modern Distribution Network
             </h2>
 
             <p className="text-lg text-gray-700 mb-6 leading-relaxed">
-              Majaami Distribution is more than a logistics company. We're building a modern, efficient, technology-driven distribution network that connects products with businesses and communities.
+              Majaami Distribution is more than a logistics company. We&apos;re building a modern, efficient, technology-driven distribution network that connects products with businesses and communities.
             </p>
 
             <div className="space-y-4 mb-8">

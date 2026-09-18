@@ -7,7 +7,7 @@ export default function PartnershipCTA() {
       <div className="container">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let's Build the Future of Distribution Together
+            Let&apos;s Build the Future of Distribution Together
           </h2>
 
           <p className="text-lg md:text-xl text-gray-200 mb-10 leading-relaxed">

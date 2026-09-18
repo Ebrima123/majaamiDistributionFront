@@ -54,7 +54,7 @@ export default function Contact() {
             <div className="max-w-3xl">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">Get in Touch</h1>
               <p className="text-xl text-gray-300">
-                Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+                Have questions? We&apos;d love to hear from you. Send us a message and we&apos;ll respond as soon as possible.
               </p>
             </div>
           </div>
@@ -193,7 +193,7 @@ export default function Contact() {
                       Thank You!
                     </h3>
                     <p className="text-green-700 mb-2">
-                      We've received your message and will be in touch shortly.
+                      We&apos;ve received your message and will be in touch shortly.
                     </p>
                     <p className="text-green-600 text-sm">
                       Check your email for further communication.

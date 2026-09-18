@@ -87,7 +87,7 @@ export default function Partner() {
           <div className="container">
             <div className="max-w-3xl">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                Let's Build Together
+                Let&apos;s Build Together
               </h1>
               <p className="text-xl text-gray-300">
                 Partner with Majaami Distribution to expand your reach, connect with businesses, and support a stronger distribution network across The Gambia.
@@ -147,7 +147,7 @@ export default function Partner() {
                     Thank You!
                   </h3>
                   <p className="text-green-700">
-                    We've received your inquiry and will be in touch shortly.
+                    We&apos;ve received your inquiry and will be in touch shortly.
                   </p>
                 </div>
               ) : (
@@ -261,7 +261,7 @@ export default function Partner() {
                   </button>
 
                   <p className="text-xs text-gray-500 text-center mt-4">
-                    We'll review your inquiry and get back to you within 2-3 business days.
+                    We&apos;ll review your inquiry and get back to you within 2-3 business days.
                   </p>
                 </form>
               )}

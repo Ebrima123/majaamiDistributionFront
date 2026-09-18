@@ -46,7 +46,7 @@ export default function About() {
             <div className="max-w-3xl">
               <h1 className="text-5xl md:text-6xl font-bold mb-6">About Majaami Distribution</h1>
               <p className="text-xl text-gray-300">
-                We're building Africa's modern distribution network, connecting businesses, products, and communities with innovative logistics solutions.
+                We&apos;re building Africa&apos;s modern distribution network, connecting businesses, products, and communities with innovative logistics solutions.
               </p>
             </div>
           </div>
@@ -62,7 +62,7 @@ export default function About() {
                   Majaami Distribution was founded with a clear vision: to create a modern, efficient, technology-driven distribution network that transforms how businesses access products and manage supply chains across The Gambia.
                 </p>
                 <p>
-                  We recognized the need for a distribution platform that combines operational excellence with innovation. A company that doesn't just move products, but enables business growth and strengthens entire ecosystems.
+                  We recognized the need for a distribution platform that combines operational excellence with innovation. A company that doesn&apos;t just move products, but enables business growth and strengthens entire ecosystems.
                 </p>
                 <p>
                   Today, we're committed to building the infrastructure and capabilities that will position The Gambia as a hub for modern logistics and distribution across West Africa.
@@ -96,7 +96,7 @@ export default function About() {
                   <div>
                     <h3 className="text-2xl font-bold text-brand-navy mb-4">Our Vision</h3>
                     <p className="text-gray-700 leading-relaxed text-lg">
-                      To become the leading distribution platform that enables businesses to scale, innovate, and compete on a global stage. We aspire to build Africa's most trusted and modern logistics network.
+                      To become the leading distribution platform that enables businesses to scale, innovate, and compete on a global stage. We aspire to build Africa&apos;s most trusted and modern logistics network.
                     </p>
                   </div>
                 </div>
@@ -140,7 +140,7 @@ export default function About() {
             <div className="max-w-3xl">
               <h2 className="text-4xl font-bold text-brand-navy mb-6">Our Long-Term Ambition</h2>
               <p className="text-lg text-gray-700 mb-8 leading-relaxed">
-                We're building an interconnected ecosystem:
+                We&apos;re building an interconnected ecosystem:
               </p>
               <div className="space-y-4">
                 <div className="flex gap-4">

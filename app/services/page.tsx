@@ -158,7 +158,7 @@ export default function Services() {
 
                         <div className="mb-8">
                           <h3 className="font-semibold text-brand-navy mb-4">
-                            What's Included:
+                            What&apos;s Included:
                           </h3>
                           <ul className="space-y-2">
                             {service.details.map((detail, i) => (
@@ -222,7 +222,7 @@ export default function Services() {
                 Ready to Transform Your Distribution?
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                Let's discuss which service is the best fit for your business and how we can help you scale.
+                Let&apos;s discuss which service is the best fit for your business and how we can help you scale.
               </p>
               <Link
                 href="/contact"
