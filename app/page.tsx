@@ -6,7 +6,6 @@ import QuickServices from '@/components/sections/QuickServices'
 import ValueProposition from '@/components/sections/ValueProposition'
 import AboutPreview from '@/components/sections/AboutPreview'
 import ServicesShowcase from '@/components/sections/ServicesShowcase'
-import ProcessTimeline from '@/components/sections/ProcessTimeline'
 import PartnershipCTA from '@/components/sections/PartnershipCTA'
 import FinalCTA from '@/components/sections/FinalCTA'
 
@@ -19,7 +18,6 @@ export default function Home() {
         <BusinessSolutions />
         <QuickServices />
         <ValueProposition />
-        <ProcessTimeline />
         <AboutPreview />
         <ServicesShowcase />
         <PartnershipCTA />

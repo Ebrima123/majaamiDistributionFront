@@ -10,9 +10,10 @@ export default function Header() {
   const toggleMenu = () => setIsOpen(!isOpen)
 
   const navLinks = [
-    { label: 'Ship & Deliver', href: '/services' },
-    { label: 'Wholesale & Supply', href: '/products' },
-    { label: 'Business Solutions', href: '/partner' },
+    { label: 'Distribution & Wholesale', href: '/services' },
+    { label: 'Logistics & Fleet', href: '/products' },
+    { label: 'Business Partnerships', href: '/partner' },
+    { label: 'Ecosystem & Vision', href: '/about' },
     { label: 'About Us', href: '/about' },
   ]
 
@@ -33,11 +34,11 @@ export default function Header() {
               </div>
             </div>
             <div className="flex items-center gap-6">
-              <a href="tel:+22220000000" className="flex items-center gap-2 hover:text-brand-primary transition">
+              <a href="tel:+22220000000" className="flex items-center gap-2 hover:text-brand-accent transition">
                 <Phone className="w-4 h-4" />
-                <span>+220 Need Help?</span>
+                <span>+220 B2B Desk</span>
               </a>
-              <Link href="#" className="hover:text-brand-primary transition">
+              <Link href="#" className="hover:text-brand-accent transition">
                 Partner Login
               </Link>
             </div>
@@ -51,12 +52,12 @@ export default function Header() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-brand-dark rounded-lg flex items-center justify-center">
-                <span className="text-brand-primary font-black text-xl">M</span>
+              <div className="w-12 h-12 bg-brand-accent rounded-lg flex items-center justify-center">
+                <span className="text-white font-black text-xl">M</span>
               </div>
               <div>
-                <p className="font-black text-lg text-brand-dark leading-none">MAJAAMI</p>
-                <p className="text-xs font-bold text-brand-primary">DISTRIBUTION</p>
+                <p className="font-black text-lg text-brand-primary leading-none">MAJAAMI</p>
+                <p className="text-xs font-bold text-brand-accent">Moving a Better Tomorrow</p>
               </div>
             </Link>
 
@@ -66,20 +67,26 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-4 py-2 text-brand-dark font-semibold text-sm hover:text-brand-primary transition-colors duration-300 rounded-md hover:bg-brand-light-gray"
+                  className="px-4 py-2 text-brand-dark font-semibold text-sm hover:text-brand-accent transition-colors duration-300 rounded-md hover:bg-brand-light-gray"
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
 
-            {/* CTA Button */}
-            <div className="hidden lg:flex">
+            {/* CTA Buttons */}
+            <div className="hidden lg:flex items-center gap-3">
+              <Link
+                href="/contact"
+                className="px-6 py-3 text-brand-primary font-semibold border-2 border-brand-primary rounded-lg hover:bg-brand-primary hover:text-white transition-all"
+              >
+                Contact B2B Desk
+              </Link>
               <Link
                 href="/partner"
-                className="btn-primary"
+                className="px-6 py-3 bg-brand-accent text-white font-semibold rounded-lg hover:bg-brand-accent-dark transition-all"
               >
-                Open a Business Account
+                Partner With Us
               </Link>
             </div>
 
@@ -110,13 +117,22 @@ export default function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                href="/partner"
-                className="block w-full px-4 py-3 text-center bg-brand-primary text-brand-dark font-bold rounded-lg hover:bg-brand-primary-dark transition-colors mt-4"
-                onClick={() => setIsOpen(false)}
-              >
-                Open a Business Account
-              </Link>
+              <div className="flex gap-3 mt-4">
+                <Link
+                  href="/contact"
+                  className="flex-1 px-4 py-3 text-center text-brand-primary font-bold border-2 border-brand-primary rounded-lg hover:bg-brand-primary hover:text-white transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Contact B2B
+                </Link>
+                <Link
+                  href="/partner"
+                  className="flex-1 px-4 py-3 text-center bg-brand-accent text-white font-bold rounded-lg hover:bg-brand-accent-dark transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Partner With Us
+                </Link>
+              </div>
             </div>
           )}
         </div>

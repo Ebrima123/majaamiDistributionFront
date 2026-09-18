@@ -1,128 +1,104 @@
 'use client'
 
 import Link from 'next/link'
-import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter, Send } from 'lucide-react'
-import { useState } from 'react'
+import { Mail, Phone, MapPin, Facebook, Linkedin, Twitter } from 'lucide-react'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
-  const [email, setEmail] = useState('')
 
   return (
-    <footer className="bg-brand-dark text-white">
+    <footer className="bg-brand-primary text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Main Footer Content */}
+        {/* Main Footer Content - 4 Columns */}
         <div className="py-16">
-          {/* Newsletter Section */}
-          <div className="mb-16 pb-16 border-b border-gray-700">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              <div>
-                <h3 className="text-2xl font-black text-brand-white mb-2">Stay Updated</h3>
-                <p className="text-gray-400">Subscribe to our dispatch newsletter for industry insights and updates.</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            {/* Column 1: About Majaami */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <div className="w-10 h-10 bg-brand-accent rounded-lg flex items-center justify-center">
+                  <span className="text-white font-black text-lg">M</span>
+                </div>
+                <span className="font-black text-lg">MAJAAMI</span>
               </div>
-              <form className="flex gap-2">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 bg-brand-slate text-white rounded-md focus:outline-none focus:ring-2 focus:ring-brand-primary"
-                />
-                <button
-                  type="submit"
-                  className="px-6 py-3 bg-brand-primary text-brand-dark font-bold rounded-md hover:bg-brand-primary-dark transition-colors"
-                >
-                  <Send className="w-5 h-5" />
-                </button>
-              </form>
-            </div>
-          </div>
-
-          {/* 4-Column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            {/* Services */}
-            <div>
-              <h4 className="font-black text-lg mb-6 text-brand-primary">SERVICES</h4>
-              <ul className="space-y-3">
-                <li><Link href="/services#distribution" className="text-gray-300 hover:text-brand-primary transition-colors">Product Distribution</Link></li>
-                <li><Link href="/services#logistics" className="text-gray-300 hover:text-brand-primary transition-colors">Logistics & Delivery</Link></li>
-                <li><Link href="/services#wholesale" className="text-gray-300 hover:text-brand-primary transition-colors">Wholesale Supply</Link></li>
-                <li><Link href="/services" className="text-gray-300 hover:text-brand-primary transition-colors">Supply Chain</Link></li>
-              </ul>
-            </div>
-
-            {/* Enterprise Solutions */}
-            <div>
-              <h4 className="font-black text-lg mb-6 text-brand-primary">ENTERPRISE</h4>
-              <ul className="space-y-3">
-                <li><Link href="/partner" className="text-gray-300 hover:text-brand-primary transition-colors">For Brands</Link></li>
-                <li><Link href="/products" className="text-gray-300 hover:text-brand-primary transition-colors">For Retailers</Link></li>
-                <li><Link href="/partner" className="text-gray-300 hover:text-brand-primary transition-colors">Business Partners</Link></li>
-                <li><Link href="#" className="text-gray-300 hover:text-brand-primary transition-colors">API Integration</Link></li>
-              </ul>
-            </div>
-
-            {/* Company */}
-            <div>
-              <h4 className="font-black text-lg mb-6 text-brand-primary">COMPANY</h4>
-              <ul className="space-y-3">
-                <li><Link href="/about" className="text-gray-300 hover:text-brand-primary transition-colors">About Us</Link></li>
-                <li><Link href="#" className="text-gray-300 hover:text-brand-primary transition-colors">Careers</Link></li>
-                <li><Link href="#" className="text-gray-300 hover:text-brand-primary transition-colors">News</Link></li>
-                <li><Link href="#" className="text-gray-300 hover:text-brand-primary transition-colors">Blog</Link></li>
-              </ul>
-            </div>
-
-            {/* Legal & Compliance */}
-            <div>
-              <h4 className="font-black text-lg mb-6 text-brand-primary">LEGAL</h4>
-              <ul className="space-y-3">
-                <li><Link href="#" className="text-gray-300 hover:text-brand-primary transition-colors">Privacy Policy</Link></li>
-                <li><Link href="#" className="text-gray-300 hover:text-brand-primary transition-colors">Terms of Service</Link></li>
-                <li><Link href="#" className="text-gray-300 hover:text-brand-primary transition-colors">Compliance</Link></li>
-                <li><Link href="#" className="text-gray-300 hover:text-brand-primary transition-colors">Security</Link></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Footer */}
-        <div className="border-t border-gray-700 py-8 flex flex-col md:flex-row items-center justify-between gap-8">
-          {/* Logo & Copyright */}
-          <div className="flex flex-col items-center md:items-start gap-3">
-            <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-brand-primary rounded-lg flex items-center justify-center">
-                <span className="text-brand-dark font-black text-lg">M</span>
+              <p className="text-gray-200 text-sm leading-relaxed mb-4">
+                Moving a Better Tomorrow. Majaami Distribution connects suppliers, retailers, and markets across The Gambia with dependable logistics and wholesale solutions.
+              </p>
+              <div className="flex items-center gap-2 text-sm text-gray-300">
+                <MapPin className="w-4 h-4 flex-shrink-0" />
+                <span>Banjul, The Gambia</span>
               </div>
-              <span className="font-black text-lg">MAJAAMI DISTRIBUTION</span>
             </div>
-            <p className="text-xs text-gray-400">© {currentYear} All rights reserved.</p>
-          </div>
 
-          {/* Contact Info */}
-          <div className="flex items-center gap-6 text-sm">
-            <a href="tel:+22220000000" className="flex items-center gap-2 text-gray-300 hover:text-brand-primary transition">
-              <Phone className="w-4 h-4" />
-              <span>+220</span>
-            </a>
-            <a href="mailto:hello@majaami.com" className="flex items-center gap-2 text-gray-300 hover:text-brand-primary transition">
-              <Mail className="w-4 h-4" />
-              <span>hello@majaami.com</span>
-            </a>
+            {/* Column 2: Commercial Services */}
+            <div>
+              <h4 className="font-black text-lg mb-6 text-brand-accent">COMMERCIAL SERVICES</h4>
+              <ul className="space-y-3">
+                <li><Link href="/services#distribution" className="text-gray-200 hover:text-brand-accent transition-colors text-sm">Product Distribution</Link></li>
+                <li><Link href="/services#logistics" className="text-gray-200 hover:text-brand-accent transition-colors text-sm">Route Delivery</Link></li>
+                <li><Link href="/services#wholesale" className="text-gray-200 hover:text-brand-accent transition-colors text-sm">Wholesale Supply</Link></li>
+                <li><Link href="/contact" className="text-gray-200 hover:text-brand-accent transition-colors text-sm">B2B Inquiries</Link></li>
+              </ul>
+            </div>
+
+            {/* Column 3: The Ecosystem */}
+            <div>
+              <h4 className="font-black text-lg mb-6 text-brand-accent">THE ECOSYSTEM</h4>
+              <ul className="space-y-3">
+                <li><Link href="#" className="text-gray-200 hover:text-brand-accent transition-colors text-sm">Agriculture Initiatives</Link></li>
+                <li><Link href="#" className="text-gray-200 hover:text-brand-accent transition-colors text-sm">Alfudi E-commerce</Link></li>
+                <li><Link href="#" className="text-gray-200 hover:text-brand-accent transition-colors text-sm">Supply Chain Tech</Link></li>
+                <li><Link href="/about" className="text-gray-200 hover:text-brand-accent transition-colors text-sm">Sustainability</Link></li>
+              </ul>
+            </div>
+
+            {/* Column 4: Contact & B2B */}
+            <div>
+              <h4 className="font-black text-lg mb-6 text-brand-accent">CONTACT & B2B</h4>
+              <div className="space-y-4">
+                <div>
+                  <p className="text-xs font-semibold text-gray-300 uppercase tracking-wide mb-1">Phone</p>
+                  <a href="tel:+22220000000" className="flex items-center gap-2 text-gray-200 hover:text-brand-accent transition text-sm">
+                    <Phone className="w-4 h-4 flex-shrink-0" />
+                    <span>+220 B2B Desk</span>
+                  </a>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-300 uppercase tracking-wide mb-1">Email</p>
+                  <a href="mailto:b2b@majaami.com" className="flex items-center gap-2 text-gray-200 hover:text-brand-accent transition text-sm">
+                    <Mail className="w-4 h-4 flex-shrink-0" />
+                    <span>b2b@majaami.com</span>
+                  </a>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-gray-300 uppercase tracking-wide mb-1">Headquarters</p>
+                  <div className="flex items-start gap-2 text-gray-200 text-sm">
+                    <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                    <span>Banjul Central Depot<br />The Gambia</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Social Links */}
-          <div className="flex items-center gap-4">
-            <a href="#" className="w-10 h-10 bg-brand-slate hover:bg-brand-primary hover:text-brand-dark rounded-lg flex items-center justify-center transition-colors">
-              <Facebook className="w-5 h-5" />
+          <div className="flex gap-4 justify-center mb-8 pb-8 border-t border-blue-800">
+            <a href="#" className="w-10 h-10 bg-brand-accent hover:bg-brand-accent-dark rounded-lg flex items-center justify-center transition-colors mt-4">
+              <Facebook className="w-5 h-5 text-white" />
             </a>
-            <a href="#" className="w-10 h-10 bg-brand-slate hover:bg-brand-primary hover:text-brand-dark rounded-lg flex items-center justify-center transition-colors">
-              <Linkedin className="w-5 h-5" />
+            <a href="#" className="w-10 h-10 bg-brand-accent hover:bg-brand-accent-dark rounded-lg flex items-center justify-center transition-colors mt-4">
+              <Linkedin className="w-5 h-5 text-white" />
             </a>
-            <a href="#" className="w-10 h-10 bg-brand-slate hover:bg-brand-primary hover:text-brand-dark rounded-lg flex items-center justify-center transition-colors">
-              <Twitter className="w-5 h-5" />
+            <a href="#" className="w-10 h-10 bg-brand-accent hover:bg-brand-accent-dark rounded-lg flex items-center justify-center transition-colors mt-4">
+              <Twitter className="w-5 h-5 text-white" />
             </a>
           </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-blue-800 py-6">
+          <p className="text-center text-gray-300 text-sm">
+            © {currentYear} Majaami Distribution. Moving a Better Tomorrow.
+          </p>
         </div>
       </div>
     </footer>
