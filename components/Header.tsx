@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X, Globe, Phone, MapPin } from 'lucide-react'
 
 export default function Header() {
@@ -53,10 +54,13 @@ export default function Header() {
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 flex-shrink-0">
               <div className="w-16 h-16 flex items-center justify-center flex-shrink-0">
-                <img
+                <Image
                   src="/logo.svg"
                   alt="Majaami Distribution"
+                  width={64}
+                  height={64}
                   className="w-full h-full object-contain"
+                  priority
                 />
               </div>
               <div className="hidden sm:block">

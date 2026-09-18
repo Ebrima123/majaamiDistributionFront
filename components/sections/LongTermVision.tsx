@@ -122,7 +122,7 @@ export default function LongTermVision() {
           </p>
           <div className="h-1 w-16 bg-brand-accent rounded-full mx-auto mb-6"></div>
           <p className="text-gray-100 text-sm md:text-base max-w-2xl mx-auto">
-            This approach transforms Majaami from a distribution intermediary into a long-term ecosystem builder—creating durable competitive advantages and shared prosperity across The Gambia's supply chains.
+            This approach transforms Majaami from a distribution intermediary into a long-term ecosystem builder&mdash;creating durable competitive advantages and shared prosperity across The Gambia&apos;s supply chains.
           </p>
         </div>
 
