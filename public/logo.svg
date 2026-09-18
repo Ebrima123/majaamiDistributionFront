@@ -1,0 +1,39 @@
+<svg viewBox="0 0 1024 856" xmlns="http://www.w3.org/2000/svg">
+  <!-- Navy M - Left side -->
+  <g>
+    <!-- Left vertical stroke -->
+    <rect x="65" y="235" width="120" height="615" fill="#0B1F3A"/>
+
+    <!-- Right vertical stroke -->
+    <rect x="355" y="235" width="120" height="615" fill="#0B1F3A"/>
+
+    <!-- Left diagonal (connecting top of left to middle peak) -->
+    <polygon points="185,235 355,235 355,310 185,450" fill="#0B1F3A"/>
+
+    <!-- Right diagonal (connecting top of right to middle peak) -->
+    <polygon points="355,235 475,235 185,500 185,425" fill="#0B1F3A"/>
+  </g>
+
+  <!-- Orange A - Right side -->
+  <g>
+    <!-- Left diagonal stroke of A -->
+    <polygon points="540,855 710,235 820,235 650,855" fill="#FF6B00"/>
+
+    <!-- Right diagonal stroke of A -->
+    <polygon points="710,235 880,855 990,855 820,235" fill="#FF6B00"/>
+
+    <!-- Horizontal crossbar -->
+    <rect x="640" y="510" width="280" height="90" fill="#FF6B00"/>
+  </g>
+
+  <!-- Dynamic Motion Stripes - Diagonal from lower-left to upper-right -->
+
+  <!-- White stripe (top) -->
+  <polygon points="280,480 600,180 680,220 360,520" fill="white"/>
+
+  <!-- Orange stripe (middle) -->
+  <polygon points="200,580 540,270 620,315 280,625" fill="#FF6B00"/>
+
+  <!-- Navy stripe (bottom) -->
+  <polygon points="100,700 420,400 500,445 180,745" fill="#0B1F3A"/>
+</svg>

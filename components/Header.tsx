@@ -51,11 +51,15 @@ export default function Header() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-brand-accent rounded-lg flex items-center justify-center">
-                <span className="text-white font-black text-xl">M</span>
+            <Link href="/" className="flex items-center gap-3 flex-shrink-0">
+              <div className="w-16 h-16 flex items-center justify-center flex-shrink-0">
+                <img
+                  src="/logo.svg"
+                  alt="Majaami Distribution"
+                  className="w-full h-full object-contain"
+                />
               </div>
-              <div>
+              <div className="hidden sm:block">
                 <p className="font-black text-lg text-brand-primary leading-none">MAJAAMI</p>
                 <p className="text-xs font-bold text-brand-accent">Moving a Better Tomorrow</p>
               </div>
