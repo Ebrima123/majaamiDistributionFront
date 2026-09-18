@@ -65,7 +65,7 @@ export default function About() {
                   We recognized the need for a distribution platform that combines operational excellence with innovation. A company that doesn&apos;t just move products, but enables business growth and strengthens entire ecosystems.
                 </p>
                 <p>
-                  Today, we're committed to building the infrastructure and capabilities that will position The Gambia as a hub for modern logistics and distribution across West Africa.
+                  Today, we&apos;re committed to building the infrastructure and capabilities that will position The Gambia as a hub for modern logistics and distribution across West Africa.
                 </p>
               </div>
             </div>
